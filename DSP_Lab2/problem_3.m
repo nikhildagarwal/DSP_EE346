@@ -6,8 +6,9 @@ for i = 1:1:121
         problem3h(i) = 0;
     end
 end
+d = @(n) double(n==0);
 for i = 1:1:121
-    problem3x(i) = delta_function(problem3n(i)) + 2.*delta_function(problem3n(i)-40) + 2.*delta_function(problem3n(i)-70) + delta_function(problem3n(i)-80);
+    problem3x(i) = d(problem3n(i)) + 2.*d(problem3n(i)-40) + 2.*d(problem3n(i)-70) + d(problem3n(i)-80);
 end
 plot(problem3n,problem3x);
 hold on;
