@@ -18,3 +18,11 @@ xlabel("ω");
 ylabel("|P(ω) / P(ω0)|");
 title("Normalized Spectrum of DTFT P(ω), ω0 = 0");
 
+figure(3);
+b = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]; %z transform of p[n]
+a = [1];
+[h,omega] = freqz(b,a,'whole',w);
+plot(omega,abs(h));
+xlabel("ω");
+ylabel("|h|");
+title("Normalized Spectrum of DTFT P(ω) using freqz");

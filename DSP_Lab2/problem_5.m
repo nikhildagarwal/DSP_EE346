@@ -19,3 +19,13 @@ xlabel("ω");
 ylabel("|S(ω) / S(ω0)");
 title("Normalized Spectrum of DTFT S(ω), ω0 = 0.2π");
 
+figure(3);
+b = [0 sin(w0) sin(2*w0) sin(3*w0) sin(4*w0) sin(5*w0) sin(6*w0) sin(7*w0) sin(8*w0) sin(9*w0) sin(10*w0) sin(11*w0) sin(12*w0) sin(13*w0) sin(14*w0) sin(15*w0) sin(16*w0) sin(17*w0) sin(18*w0) sin(19*w0)]; %z transform of s[n]
+a = [1];
+[h,omega] = freqz(b,a,'whole',w);
+plot(omega,abs(h));
+xlabel("ω");
+ylabel("|h|");
+title("Normalized Spectrum of DTFT S(ω) using freqz");
+
+
