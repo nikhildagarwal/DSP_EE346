@@ -1,0 +1,17 @@
+x = [1 1 1 1 -1 -1 -1 -1 1 1 1 1 -1 -1 -1 -1 1 1 1 1 -1 -1 -1 -1 1 1 1 1 -1 -1 -1 -1 1 1 1 1 -1 -1 -1 -1];
+figure(1);
+stem(0:1:39,x,"Marker",".");
+axis([0 39 -2 2]);
+title("input");
+ylabel("x[n]");
+xlabel("time samples, n");
+figure(2);
+b = [1 1 1];
+a = [1 0 0 0 0.5];
+y = filter(b,a,x.*(1/3));
+figure(2);
+stem(0:1:39,y,"Marker",".");
+axis([0 39 -2.5 2.5]);
+title("output");
+ylabel("y[n]");
+xlabel("time samples, n");

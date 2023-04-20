@@ -1,0 +1,26 @@
+clear; clc;
+w = 0:2*pi/200:2*pi;
+b = [1 0 0 0 0 -2 0 0 0 0 1];
+a = [1 -1];
+[h,hi] = freqz(b,a,w);
+figure(1);
+plot(0:2/200:2,abs(h));
+hold on;
+title("DTFT and DFT using freqz and fft");
+xlabel("ω/π");
+ylabel("|S(ω)|");
+Sn = [1 1 1 1 1 -1 -1 -1 -1 -1];
+y = fft(Sn);
+plot(0:2/10:1.8,abs(y),"LineStyle","none","Marker","o");
+legend('DTFT', 'DFT');
+hold off;
+
+figure(2);
+plot(0:10/200:10,abs(h));
+hold on;
+plot(0:1:9,abs(y),"LineStyle","none","Marker","o");
+title("DTFT and DFT using freqz and fft");
+xlabel("DFT index, k");
+ylabel("|S(ω)|");
+legend('DTFT', 'DFT');
+hold off;
